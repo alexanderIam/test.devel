@@ -29,30 +29,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!empty($department_id)) {
             $suffix = '.manage_department';
         } else {
-            $suffix = '.manage_department';
+            $suffix = '.add_department';
         }
 
-    } elseif ($mode === 'update_departments') {
-
-        if (!empty($_REQUEST['department_data'])) {
-            foreach ($_REQUEST['department_data'] as $department_id => $department_data) {
-                fn_update_department($department_data, $department_id);
-            }
-        }
-
-        $suffix = '.manage_department';
     } elseif ($mode === 'delete_department') {
         $department_id = !empty($_REQUEST['department_id']) ? $_REQUEST['department_id'] : 0;
         fn_delete_department($department_id);
 
         $suffix = '.manage_department';
+
     } elseif ($mode === 'delete_departments') {
 
         if (!empty($_REQUEST['department_ids']))
             foreach ($_REQUEST['department_ids'] as $department_id) {
                 fn_delete_department($department_id);
             }
-
         $suffix = '.manage_department';
     }
 
@@ -62,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($mode === 'add_department' || $mode === 'update_department') {
     $department_id = !empty($_REQUEST['department_id']) ? $_REQUEST['department_id'] : 0;
     $department_data = fn_get_department_data($department_id, DESCR_SL);
-
-    if (empty($department_data) && $mode === 'update') {
+   
+    if (empty($department_data) && $mode === 'update_department') {
         return [CONTROLLER_STATUS_NO_PAGE];
     }
 
@@ -72,14 +63,32 @@ if ($mode === 'add_department' || $mode === 'update_department') {
             'department_data' => $department_data,
             'mode_check' => $mode,
             'u_info' => !empty($department_data['admin_id']) ? fn_get_user_short_info($department_data['admin_id']) : [],
+            'usergroups' => fn_get_usergroups(['type'=>'C', 'status'=>['A', 'H']])
         ]
     );
+    
 } elseif ($mode === 'manage_department') {
-    list($departments, $search) = fn_get_departments($_REQUEST, Registry::get('settings.Appearance.admin_elements_per_page'), DESCR_SL);
-
+    list($departments, $search) = fn_get_departments($_REQUEST, Registry::get('addons.departments.admin_departments_per_page'), DESCR_SL);
+   
     Tygh::$app['view']->assign([
         'departments' => $departments,
         'search' => $search,
-        'department_statuses' => fn_get_simple_statuses(STATUSES_DEPARTMENT),
     ]);
+   
+}elseif($mode === 'department_name'){
+
+    if (defined('AJAX_REQUEST')) {
+        $department_data = $_REQUEST;
+
+        if (!empty($department_data['check_name'])){
+            $duplicate_name = db_get_field('SELECT COUNT(*) FROM  ?:department_descriptions WHERE department = ?s', $department_data['check_name']);
+            
+            if($duplicate_name){
+                fn_set_notification('W', __('warning'), __('departments.duplicate_name',[
+                    '[name]' => $department_data['check_name']
+                ]));
+            }    
+        }
+        exit;
+    }
 }
