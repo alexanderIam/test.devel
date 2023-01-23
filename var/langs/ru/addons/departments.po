@@ -11,3 +11,75 @@ msgstr "Отделы"
 msgctxt "Addons::description::departments"
 msgid "Allows you to create departments"
 msgstr "Позволяет создать отделы"
+
+msgctxt "Languages::departments"
+msgid "Departments"
+msgstr "Отделы"
+
+msgctxt "Languages::departments_menu_description"
+msgid "Create department and assign workers and manager."
+msgstr "Создай отдел и назначь сотрудников и руководителя"
+
+msgctxt "Languages::departments.new_departemnt"
+msgid "New department"
+msgstr "Новый отдел"
+
+msgctxt "Languages::departments.editing_department"
+msgid "Editing department"
+msgstr "Редактировать отдел"
+
+msgctxt "Languages::add_department"
+msgid "Add department"
+msgstr "Добавить отдел"
+
+msgctxt "Languages::department_title"
+msgid "Department title"
+msgstr "Отдел"
+
+msgctxt "Languages::departments_title"
+msgid "Departments title"
+msgstr "Отделы"
+
+msgctxt "Languages::department_manager"
+msgid "Manager"
+msgstr "Руководитель"
+
+msgctxt "Languages::department_worker"
+msgid "Worker"
+msgstr "Сотрудники"
+
+msgctxt "Languages::department_add_worker"
+msgid "Add workers"
+msgstr "Добавить сотрудников"
+
+msgctxt "Languages::department_add_manager"
+msgid "Add manager"
+msgstr "Добавить руководителя"
+
+msgctxt "Languages::department_workers_list"
+msgid "List of assigned workers"
+msgstr "Список назначенных сотрудников"
+
+msgctxt "Languages::department_not_assigned"
+msgid "Not assigned"
+msgstr "Не назначен"
+
+msgctxt "Languages::department_no_workers"
+msgid "No assigned workers"
+msgstr "Нет назначенных сотрудников"
+
+msgctxt "Languages::departments.duplicate_name"
+msgid "Department: [name] already exists, please change the name"
+msgstr "Отдел: [name] Уже существует, пожалуйста придумайте другое имя"
+
+msgctxt "SettingsSections::departments::departments"
+msgid "Departments"
+msgstr "Departments"
+
+msgctxt "SettingsOptions::departments::departments_per_page"
+msgid "Departments per page"
+msgstr "Количество отделов на страницу"
+
+msgctxt "SettingsOptions::departments::admin_departments_per_page"
+msgid "Departments per page on admin panel"
+msgstr "Количество отделов на панели админа"

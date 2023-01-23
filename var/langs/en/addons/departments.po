@@ -11,3 +11,75 @@ msgstr "Departments"
 msgctxt "Addons::description::departments"
 msgid "Allows you to create departments"
 msgstr "Allows you to create departments"
+
+msgctxt "Languages::departments"
+msgid "Departments"
+msgstr "Departments"
+
+msgctxt "Languages::departments_menu_description"
+msgid "Create department and assign workers and manager."
+msgstr "Create department and assign workers withmanager."
+
+msgctxt "Languages::departments.new_departemnt"
+msgid "New department"
+msgstr "New department"
+
+msgctxt "Languages::departments.editing_department"
+msgid "Editing department"
+msgstr "Editing department"
+
+msgctxt "Languages::add_department"
+msgid "Add department"
+msgstr "Add department"
+
+msgctxt "Languages::department_title"
+msgid "Department title"
+msgstr "Department"
+
+msgctxt "Languages::departments_title"
+msgid "Departments title"
+msgstr "Departments"
+
+msgctxt "Languages::department_manager"
+msgid "Manager"
+msgstr "Manager"
+
+msgctxt "Languages::department_worker"
+msgid "Worker"
+msgstr "Workers"
+
+msgctxt "Languages::department_add_worker"
+msgid "Add workers"
+msgstr "Add workers"
+
+msgctxt "Languages::department_add_manager"
+msgid "Add manager"
+msgstr "Add manager"
+
+msgctxt "Languages::department_workers_list"
+msgid "List of assigned workers"
+msgstr "List of assigned workers"
+
+msgctxt "Languages::department_not_assigned"
+msgid "Not assigned"
+msgstr "Not assigned"
+
+msgctxt "Languages::department_no_workers"
+msgid "No assigned workers"
+msgstr "No assigned workers"
+
+msgctxt "Languages::departments.duplicate_name"
+msgid "Department: [name] already exists, please change the name"
+msgstr "Department: [name] already exists, please change the name"
+
+msgctxt "SettingsSections::departments::departments"
+msgid "Departments"
+msgstr "Departments"
+
+msgctxt "SettingsOptions::departments::departments_per_page"
+msgid "Departments per page"
+msgstr "Departments per page"
+
+msgctxt "SettingsOptions::departments::admin_departments_per_page"
+msgid "Departments per page on admin panel"
+msgstr "Departments per page on admin panel"
