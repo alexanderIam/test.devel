@@ -1,3 +1,4 @@
+{script src="js/addons/departments/func.js"}
 {if $department_data}
     {$id = $department_data.department_id}
 {else}
@@ -10,7 +11,7 @@
         <input type="hidden" class="cm-no-hide-input" name="fake" value="1" />
         <input type="hidden" class="cm-no-hide-input" name="department_id" value="{$id}" />
         <div id="content_general">
-            <div class="control-group">
+            <div class="control-group cm-ajax" id="department_name">
                 <label for="elm_department_name" class="control-label cm-required">
                     {__("name")}
                 </label>
@@ -18,6 +19,7 @@
                     <input type="text" name="department_data[department]" id="elm_department_name"
                         value="{$department_data.department}" size="25" class="input-large" />
                 </div>
+            <!--department_name-->
             </div>
             <div class="control-group" id="banner_graphic">
                 <label class="control-label">{__("image")}</label>
@@ -72,7 +74,19 @@
                         user_type="A"
                     }           
                 </div>
-            </div>    
+            </div>
+            <div class="control-group">
+                <label class="control-label">{__("usergroups")}</label>
+                <div class="controls">
+                    {include "common/select_usergroups.tpl"
+                        id="department_data_usergroup_id"
+                        name="department_data[usergroup_ids]"
+                        usergroup=$usergroups
+                        usergroup_ids=$department_data.usergroup_ids input_extra=""
+                        list_mode=true
+                    }
+                </div>
+            </div>     
             <div class="control-group">
                 <label class="control-label">{__("department_worker")}</label>
                 <div class="controls">
@@ -90,15 +104,12 @@
 
         {capture name="buttons"}
             {if !$id}
-
                 {include "buttons/save_cancel.tpl" 
                     but_role="submit-link" 
-                    but_target_form="departments_form" 
+                    but_target_form="departments_form"
                     but_name="dispatch[departments.update_department]"
                 }
-
             {else}
-
                 {include 
                     file="buttons/save_cancel.tpl" 
                     but_name="dispatch[departments.update_department]" 
@@ -116,9 +127,7 @@
 
             {dropdown content=$smarty.capture.tools_list}
             {/if}
-
         {/capture}
-
     </form>
 {/capture}
 

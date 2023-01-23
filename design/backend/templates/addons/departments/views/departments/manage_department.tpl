@@ -3,7 +3,7 @@
     <form action="{""|fn_url}" method="post" id="departments_form" name="departments_form" enctype="multipart/form-data">
         
         <input type="hidden" name="fake" value="1"/>
-        {include file="common/pagination.tpl" save_current_page=true save_current_url=true div_id="pagination_contents_departments"}
+        {include "common/pagination.tpl" save_current_page=true save_current_url=true div_id="pagination_contents_departments"}
         {$c_url=$config.current_url|fn_query_remove:"sort_by":"sort_order"}
         {$rev=$smarty.request.content_id|default:"pagination_contents_departments"}
         {include_ext file="common/icon.tpl" class="icon-`$search.sort_order_rev`" assign=c_icon}
@@ -52,20 +52,15 @@
 
                         {foreach $departments as $department}
                             <tr class="cm-row-status-{$department.status|lower} cm-longtap-target"
-                                {if $has_permission}
                                     data-ca-longtap-action="setCheckBox"
                                     data-ca-longtap-target="input.cm-item"
                                     data-ca-id="{$department.department_id}"
-                                {/if}
-                            >
-                                {$allow_save=$department|fn_allow_save_object:"departments"}
-
+                            >                              
                                 {if $allow_save}
                                     {$no_hide_input="cm-no-hide-input"}
                                 {else}
                                     {$no_hide_input=""}
                                 {/if}
-
                                 <td width="6%" class="left mobile-hide">
                                     <input type="checkbox" name="department_ids[]" value="{$department.department_id}" class="cm-item {$no_hide_input} cm-item-status-{$department.status|lower} hide" /></td>
                                 <td class="products-list__image">
