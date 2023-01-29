@@ -37,7 +37,7 @@
     * Отключим виртаульные хост по умолчанию.
         * Команда ___sudo a2issite 000-default___.
     * Включим созданные виртуальные хосты.
-    * Команда sudo a2ensite site.devel.
+    * Команда sudo a2ensite test.devel.
     * Команда sudo a2ensite admin.devel.
     * Открываем /etc/apache2/apache2.conf.
     * Поменять директорию с Directory /var/www на Directory /home/[имя пользователя]/public_html.
@@ -45,7 +45,7 @@
     * Перезапустим апач.
     * Команда sudo systemctl reload apache2 если нет ошибок, значит все ок.
     * В файле etc/hosts пропишем адреса наших хостов.
-        * _127.0.0.1 site.devel admin.devel_.
+        * _127.0.0.1 test.devel admin.devel_.
         * Сохраняем и выходим.
     * Идем в браузере набираем сайт test.devel и потом admin.devel.
     * Если будет ошибка доступа то ничего страшного.
