@@ -91,7 +91,7 @@
     * вписать эмаил адрес админа и пароль.
     * Нажать установить.
     * Активировать если есть лицензионный ключ.
-    * Загрузить все файлы с ветки development  ([ссылка на репозиторий](https://github.com/alexanderIam/test.devel/tree/Development)) в нашу директорию test.devel
+    * Загрузить все файлы с ветки Dev  ([ссылка на репозиторий](https://github.com/alexanderIam/test.devel/tree/master#readme)) в нашу директорию test.devel
     * Перезапустить апач.
     * Читать функциональную часть.
     * Для тестирвоания использовался браузер Firefox Browser 109.0 (64-bit)
